@@ -1,0 +1,77 @@
+html,body{
+  margin: 0;
+}
+
+#chatHistory{
+  height: 70vh;
+  margin-bottom: 0px;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+#chatHistory::-webkit-scrollbar {
+    width: 0px;
+}
+
+.item.script{
+  min-height: 40px;
+}
+
+.window.close.outline{
+  float: right;
+  color: #d8dbdf;
+}
+
+.window.close.outline:hover{
+  color: #c0c3c6;
+}
+
+.large.text{
+  font-size: 1.1rem;
+}
+
+#send{
+  background-color: #4b8fff;
+  color: #f1f4f8;
+}
+
+.wide{
+  padding: 0px;
+}
+
+.brand{
+  border-radius: 50%;
+}
+
+h2.ui {
+  text-align: center;
+}
+
+.guess{
+  display: flex;
+  margin: 10px;  
+}
+
+.operator{
+  display: flex;
+  margin: 10px; 
+  justify-content: flex-end;
+}
+
+.guessMsg{
+  background-color: #4b8fff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 70%;
+}
+
+.operatorMsg{
+  display: flex;
+  background-color: #f1f4f8;
+  color: #4b4b4b;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 70%;
+}
+

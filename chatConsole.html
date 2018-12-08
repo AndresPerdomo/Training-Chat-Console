@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Console App</title>
+	<link rel="stylesheet" type="text/css" href="chatConsole.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="ui menu">
+  <a class="header item">Gubagoo<img src="https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg" alt="" class="brand"></a>
+  <a class="item">Dashboard</a>
+  <a class="item">Chat Console</a>
+  <a class="item">History</a>
+</div>
+
+<!-- GRID -->
+<div class="ui four column grid">
+  <div class="two wide column">
+    
+  </div>
+  <div class="nine wide column">
+  	<!-- CENTER CHAT CONSOLE-->
+	  <div id="chatHistory" class="large text ui raised very padded text segment console">
+		  <h2 class="ui center">Chat Console</h2>
+		  <div id="chatLog">
+			  <div class="guess">
+			    <div class="guessMsg">I need a car</div>
+			  </div>
+			  <div class="operator">
+			    <div class="operatorMsg">I would be happy to assist you with that!</div>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="ui form">
+  		<div class="field operatorInput raised">
+	  		<textarea id="operatorText" rows="3" placeholder="Insert your message here"></textarea>
+	  		<div id="send" class="ui bottom attached button" tabindex="0">Submit</div>
+	  	</div>
+	  </div>
+  </div>
+  <div class="four wide column">
+  	<!-- CHAT INPUT --> 
+		<div class="ui fluid vertical menu operatorScript">
+		   <div class="item">
+		   <h4 class="ui header">-QUICK REPLIES-<a><i id="close" class="large window close outline icon"></i></a></h4>
+		   </div>
+		   <div class="link item script">-DEALERSHIP LINKS-</div>
+		   <div class="link item script">-CUSTOMER ACKNOWLEDGEMENT-</div>
+		   <div class="link item script">-FACEBOOK-</div>
+		   <div class="link item script">-INVENTORY MATCHING-</div>
+		   <div class="link item script">-SALES ENGAGEMENT QUESTIONS-</div>
+		   <div class="link item script">-SALES LEAD GENERATION-</div>
+		   <div class="link item script">-SECOND LEAD GENERATION ATTEMPT-</div>
+		   <div class="link item script">-SALES APPOINTMENT SETTING-</div>
+		   <div class="link item script">-SERVICE & PARTS ENGAGEMENT QUESTIONS-</div>
+		   <div class="link item script">-SERVICE & PARTS LEAD GENERATION-</div>
+		   <div class="link item script">-CUSTOMER COMPLAINT LEAD GENERATION-</div>
+		   <div class="link item script">-ESCALATION-</div>
+		   <div class="link item script">-NO REPLY-</div>
+		   <div class="link item script">-CLOSING-</div>
+		   <div class="link item script">-DEALERSHIP INFORMATION-</div>
+		   <div class="link item script"></div>
+		</div>
+  </div>
+  <div class="one wide column">
+    
+  </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="chatConsole.js"></script>
+</body>
+</html>
