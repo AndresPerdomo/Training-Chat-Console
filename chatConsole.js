@@ -1,4 +1,8 @@
 var message;
+var currentStep = 0;
+var n = 0;
+var salesSteps = ["new","model","features","name","number","email","anything"];
+var salesAnswers = ["new","corolla","no","Andres","555-555-5555","test@gmail.com","no, thank you!"]
 
 // PERMANENT EVENT HANDLERS
 $("body").on("click",".main", function(){
@@ -39,8 +43,17 @@ function create(message){
 	  	"<div class='operator'>" +
 		    "<div class='operatorMsg'>" + message + "</div>" +
 		"</div>"
-  		);
+  	);
   	$("#operatorText").val('');
+  	n = message.search(salesSteps[currentStep]);
+  	if (n !== -1) {
+ 	$("#chatLog").append(
+	  	"<div class='guess'>" +
+		    "<div class='guessMsg'>"+ salesAnswers[currentStep] + "</div>" +
+		"</div>"
+  	);
+ 	currentStep++;
+  }
 };
 
 //-------------------------------------------------------------------------------------------------------
@@ -100,8 +113,8 @@ function customerAck(){
 $("#send").click(function(){
   if($("#operatorText").val() != ''){
   	var message = $("textarea").val();
-  	console.log(message);
   	create();
+
 }
 }); 
 
@@ -109,7 +122,6 @@ $("#send").click(function(){
 $("html").keyup(function(event){
   if(event.which === 13 & $("#operatorText").val() != ''){
   	var message = $("textarea").val();
-  	console.log(message);
   	create();
 }	
 });
