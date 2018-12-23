@@ -10,9 +10,7 @@
 <!-- NAVBAR -->
 <div class="ui menu">
   <a class="header item">Gubagoo<img src="https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg" alt="" class="brand"></a>
-  <a class="item">Dashboard</a>
   <a class="item">Chat Console</a>
-  <a class="item">History</a>
 </div>
 
 <!-- GRID -->
@@ -20,15 +18,22 @@
   <div class="two wide column">
     
   </div>
-  <div class="nine wide column">
+  <div class="nine wide column chatLog">
   	<!-- CENTER CHAT CONSOLE-->
-	  <div id="chatHistory" class="large text ui raised very padded text segment console">
+	  <div id="chatHistory" class="large text ui very padded text segment console">
 		  <div id="chatLog">
-			  <div class="guess">
-			    <div class="guessMsg">I need a car</div>
+			  <div class="guess ui one column grid">
+			  	<div class="row guessRow">
+			  		<img src="https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg" alt="" class="brand icon">
+			    	<div class="guessMsg">I am looking to purchase a car</div>
+				</div>
+			    <div class="time">tiempo</div>
 			  </div>
-			  <div class="operator">
-			    <div class="operatorMsg">I would be happy to assist you with that!</div>
+			  <div class="operator ui one column grid">
+			  	<div class="row operatorRow">
+			    	<div class="operatorMsg">I would be happy to assist you with that!</div>
+				</div>
+				<div class="time">tiempo</div>
 			  </div>
 		  </div>
 	  </div>
@@ -39,35 +44,36 @@
 	  	</div>
 	  </div>
   </div>
-  <div class="four wide column">
+  <div class="four wide column scriptMenu">
   	<!-- CHAT INPUT --> 
 		<div class="ui fluid vertical menu operatorScript">
 		   <div class="item">
-		   <h4 class="ui header">-QUICK REPLIES-<a><i id="close" class="large window close outline icon"></i></a></h4>
+		   		<h4 class="ui header">-QUICK REPLIES-<a><i id="close" class="large window close outline icon"></i></a></h4>
 		   </div>
-		   <div class="link item main">-DEALERSHIP LINKS-</div>
-		   <div class="link item main">-CUSTOMER ACKNOWLEDGEMENT-</div>
-		   <div class="link item main">-FACEBOOK-</div>
-		   <div class="link item main">-INVENTORY MATCHING-</div>
-		   <div class="link item main">-SALES ENGAGEMENT QUESTIONS-</div>
-		   <div class="link item main">-SALES LEAD GENERATION-</div>
-		   <div class="link item main">-SECOND LEAD GENERATION ATTEMPT-</div>
-		   <div class="link item main">-SALES APPOINTMENT SETTING-</div>
-		   <div class="link item main">-SERVICE & PARTS ENGAGEMENT QUESTIONS-</div>
-		   <div class="link item main">-SERVICE & PARTS LEAD GENERATION-</div>
-		   <div class="link item main">-CUSTOMER COMPLAINT LEAD GENERATION-</div>
-		   <div class="link item main">-ESCALATION-</div>
-		   <div class="link item main">-NO REPLY-</div>
-		   <div class="link item main">-CLOSING-</div>
-		   <div class="link item main">-DEALERSHIP INFORMATION-</div>
-		   <div class="link item main"></div>
-		</div>
+			   <div class="link item main">-DEALERSHIP LINKS-</div>
+			   <div class="link item main">-CUSTOMER ACKNOWLEDGEMENT-</div>
+			   <div class="link item main">-FACEBOOK-</div>
+			   <div class="link item main">-INVENTORY MATCHING-</div>
+			   <div class="link item main">-SALES ENGAGEMENT QUESTIONS-</div>
+			   <div class="link item main">-SALES LEAD GENERATION-</div>
+			   <div class="link item main">-SECOND LEAD GENERATION ATTEMPT-</div>
+			   <div class="link item main">-SALES APPOINTMENT SETTING-</div>
+			   <div class="link item main">-SERVICE & PARTS ENGAGEMENT QUESTIONS-</div>
+			   <div class="link item main">-SERVICE & PARTS LEAD GENERATION-</div>
+			   <div class="link item main">-CUSTOMER COMPLAINT LEAD GENERATION-</div>
+			   <div class="link item main">-ESCALATION-</div>
+			   <div class="link item main">-NO REPLY-</div>
+			   <div class="link item main">-CLOSING-</div>
+			   <div class="link item main">-DEALERSHIP INFORMATION-</div>
+			</div>
   </div>
   <div class="one wide column">
     
   </div>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <script type="text/javascript" src="chatConsole.js"></script>
 </body>
 </html>

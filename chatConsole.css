@@ -1,9 +1,14 @@
 html,body{
   margin: 0;
+  background-color: #f2f2f2 !important;
 }
 
-#chatHistory{
-  height: 70vh;
+.chatLog, .scriptMenu{
+  padding: 1rem 0px 1rem 0px !important;
+}
+
+#chatHistory, #scriptContainer{
+  height: 75vh;
   margin-bottom: 0px;
   overflow: auto;
   word-wrap: break-word;
@@ -13,8 +18,10 @@ html,body{
     width: 0px;
 }
 
-.item.script{
+.item.script,.item.main{
   min-height: 40px;
+  color: #0051e1 !important;
+  font-size: 1.1em;
 }
 
 .window.close.outline{
@@ -52,6 +59,15 @@ h2.ui {
   margin: 10px;  
 }
 
+.guessRow,.operatorRow{
+  padding-bottom: 0px !important;
+}
+
+.time{
+  color: #a8aaad;
+  font-size: 0.9em;
+}
+
 .operator{
   display: flex;
   margin: 10px; 
@@ -75,3 +91,8 @@ h2.ui {
   max-width: 70%;
 }
 
+.icon{
+  margin-right: 10px;
+  height: 35px;
+  width: 30px;
+}
