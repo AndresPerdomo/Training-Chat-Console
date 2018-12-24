@@ -1,9 +1,88 @@
 var message;
 var currentStep = 0;
 var n = 0;
-var salesSteps = ["new","model","features","name","number","email","anything"];
-var salesAnswers = ["new","corolla","no","Andres","555-555-5555","Perdomo, test@gmail.com","no, thank you!"];
+var salesSteps = [/new or pre-owned/i,/specific model in mind/i,/are there any special features/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
+var salesAnswers = ["I am looking for new","I would like a corolla","No, just the basic features and no specific color","Andres","555-555-5555","Perdomo, test@gmail.com","no, thank you!","Thanks"];
+var serviceSteps = [/bring your vehicle/i,/of your vehicle/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
+var serviceAnswers = ["Anyday next week would work","2018 Toyota Corolla","Aurora Calisto","555-555-5555","test@gmail.com","that is all. Thank you!","Thanks"];
+var partsSteps = [/of your vehicle/i,/installation as well/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
+var partsAnswers = ["2015 Honda Civic","just parts please","Jean","555-555-5555","test@gmail.com","I think that is all","Thank you!"];
+var chatSteps;
+var chatAnswers; 
 
+// CHAT TYPE SELECTOR
+
+$("#salesChat1").on("click",function(){
+	$("#chatLog").html("");
+	chatSteps = salesSteps;
+	chatAnswers = salesAnswers;
+	currentStep = 0;
+ 	$("#chatLog").append(
+	  	"<div class='guess ui one column grid'>" +
+	  		"<div class='row guessRow'>" +
+	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
+		    	"<div class='guessMsg'>"+ "I am looking to purchase a car" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" +
+		"</div>"
+  	);
+ 	$("#chatLog").append(
+	  	"<div class='operator ui one column grid'>" +
+	  		"<div class='row operatorRow'>" +
+		    	"<div class='operatorMsg'>" + "Hello! My name is Anthony. It's great to have you with us!" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" + 
+		"</div>"
+  	);
+})
+
+$("#serviceChat1").on("click",function(){
+	$("#chatLog").html("");
+	chatSteps = serviceSteps;
+	chatAnswers = serviceAnswers;
+	currentStep = 0;
+ 	$("#chatLog").append(
+	  	"<div class='guess ui one column grid'>" +
+	  		"<div class='row guessRow'>" +
+	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
+		    	"<div class='guessMsg'>"+ "I need to schedule an oil change" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" +
+		"</div>"
+  	);
+ 	$("#chatLog").append(
+	  	"<div class='operator ui one column grid'>" +
+	  		"<div class='row operatorRow'>" +
+		    	"<div class='operatorMsg'>" + "Hello! My name is Anthony. It's great to have you with us!" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" + 
+		"</div>"
+  	);
+})
+
+$("#partsChat1").on("click",function(){
+	$("#chatLog").html("");
+	chatSteps = partsSteps;
+	chatAnswers = partsAnswers;
+	currentStep = 0;
+ 	$("#chatLog").append(
+	  	"<div class='guess ui one column grid'>" +
+	  		"<div class='row guessRow'>" +
+	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
+		    	"<div class='guessMsg'>"+ "I need to purchase tires for my vehicle" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" +
+		"</div>"
+  	);
+ 	$("#chatLog").append(
+	  	"<div class='operator ui one column grid'>" +
+	  		"<div class='row operatorRow'>" +
+		    	"<div class='operatorMsg'>" + "Hello! My name is Anthony. It's great to have you with us!" + "</div>" +
+		    "</div>" +
+		    "<div class='time'>" + moment().format('LTS') + "</div>" + 
+		"</div>"
+  	);
+})
 
 // PERMANENT EVENT HANDLERS
 $("body").on("click",".main", function(){
@@ -80,18 +159,20 @@ function create(message){
   	);
   	$(".operatorMsg:last").transition({animation  : 'pulse', duration   : '100ms',});
   	$("#operatorText").val('');
-  	n = message.search(salesSteps[currentStep]);
+  	n = message.search(chatSteps[currentStep]);
+  	setTimeout(function(){
   	if (n !== -1) {
- 	$("#chatLog").delay(2000).append(
+ 	$("#chatLog").append(
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
 	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
-		    	"<div class='guessMsg'>"+ salesAnswers[currentStep] + "</div>" +
+		    	"<div class='guessMsg'>"+ chatAnswers[currentStep] + "</div>" +
 		    "</div>" +
 		    "<div class='time'>" + moment().format('LTS') + "</div>" +
 		"</div>"
   	);
  	currentStep++;
+ 	$(".guessMsg:last").transition({animation  : 'pulse', duration   : '100ms',});
     } else{
  	$("#chatLog").append(
 	  	"<div class='guess ui one column grid'>" +
@@ -101,11 +182,12 @@ function create(message){
 		    "</div>" +
 		    "<div class='time'>" + moment().format('LTS') + "</div>" +
 		"</div>"
-	);    	
+	);
+	$(".guessMsg:last").transition({animation  : 'pulse', duration   : '100ms',});    	
     }
     $("#chatHistory").scrollTop(10000);
+	}, 1500);
 };
-
 //-------------------------------------------------------------------------------------------------------
 
 // SCRIPT STATES
