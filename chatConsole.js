@@ -178,7 +178,7 @@ function create(message){
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
 	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
-		    	"<div class='guessMsg'>"+ "I am confused"+ "</div>" +
+		    	"<div class='guessMsg'>"+ "I am confused, please follow chat steps correctly."+ "</div>" +
 		    "</div>" +
 		    "<div class='time'>" + moment().format('LTS') + "</div>" +
 		"</div>"
