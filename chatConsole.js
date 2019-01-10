@@ -1,8 +1,8 @@
 var message;
 var currentStep = 0;
 var n = 0;
-var salesSteps = [/new or pre-owned/i,/specific model in mind/i,/are there any special features/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
-var salesAnswers = ["I am looking for new","I would like a corolla","No, just the basic features and no specific color","Andres","555-555-5555","Perdomo, test@gmail.com","no, thank you!","Thanks"];
+var salesSteps = [/specific model in mind/i,/new or pre-owned/i,/are there any special features/i,/your name/i,/best phone number/i,/email/i,/when do you want to come in/i,/anything else/i,/great day/i];
+var salesAnswers = ["I am looking for a Corolla","new only please","No, just the basic features and no specific color","Andres","555-555-5555","Perdomo, test@gmail.com","I would like to see what you have tomorrow at around 2:00 PM","no, thank you!","Thanks"];
 var serviceSteps = [/bring your vehicle/i,/of your vehicle/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
 var serviceAnswers = ["Anyday next week would work","2018 Toyota Corolla","Aurora Calisto","555-555-5555","test@gmail.com","that is all. Thank you!","Thanks"];
 var partsSteps = [/of your vehicle/i,/installation as well/i,/your name/i,/best phone number/i,/email/i,/anything else/i,/great day/i];
@@ -17,6 +17,10 @@ $("#salesChat1").on("click",function(){
 	chatSteps = salesSteps;
 	chatAnswers = salesAnswers;
 	currentStep = 0;
+	$(".chatSelection").removeClass("blue");
+	$("#leadForm").removeClass("success");
+	$("#leadForm").trigger("reset");
+	$("#salesChat1").addClass("blue");
  	$("#chatLog").append(
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
@@ -41,6 +45,10 @@ $("#serviceChat1").on("click",function(){
 	chatSteps = serviceSteps;
 	chatAnswers = serviceAnswers;
 	currentStep = 0;
+	$(".chatSelection").removeClass("blue");
+	$("#leadForm").removeClass("success");
+	$("#leadForm").trigger("reset");
+	$("#serviceChat1").addClass("blue");
  	$("#chatLog").append(
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
@@ -65,6 +73,10 @@ $("#partsChat1").on("click",function(){
 	chatSteps = partsSteps;
 	chatAnswers = partsAnswers;
 	currentStep = 0;
+	$("#leadForm").removeClass("success");
+	$("#leadForm").trigger("reset");
+	$(".chatSelection").removeClass("blue");
+	$("#partsChat1").addClass("blue");
  	$("#chatLog").append(
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
@@ -159,6 +171,7 @@ function create(message){
   	);
   	$(".operatorMsg:last").transition({animation  : 'pulse', duration   : '100ms',});
   	$("#operatorText").val('');
+  	$("#chatHistory").scrollTop(10000);
   	n = message.search(chatSteps[currentStep]);
   	setTimeout(function(){
   	if (n !== -1) {
@@ -178,7 +191,7 @@ function create(message){
 	  	"<div class='guess ui one column grid'>" +
 	  		"<div class='row guessRow'>" +
 	  			"<img src='https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg' alt='' class='brand icon'>" +
-		    	"<div class='guessMsg'>"+ "I am confused, please follow chat steps correctly."+ "</div>" +
+		    	"<div class='guessMsg'>"+ "I am confused. Please follow chat steps correctly."+ "</div>" +
 		    "</div>" +
 		    "<div class='time'>" + moment().format('LTS') + "</div>" +
 		"</div>"
@@ -558,7 +571,17 @@ $("html").keyup(function(event){
 }	
 });
 
+// LEAD SUCCESSFUL
 
+$("#leadForm").submit(function(event){
+	$("#leadForm").addClass("success");
+	event.preventDefault();
+})
+
+$(".department").click(function(){
+	$(".department").removeClass("blue");
+	$(this).addClass("blue");
+})
 
 
 

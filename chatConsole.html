@@ -15,34 +15,23 @@
 
 <!-- GRID -->
 <div class="ui four column grid">
-  <div class="two wide column">
-    <button id="salesChat1">Sales</button>
-    <button id="serviceChat1">Service</button>
-    <button id="partsChat1">Parts</button>
+  <div class="one wide column">
+  	<div class="ui vertical buttons">
+    	<button id="salesChat1"   class="ui chatSelection button">Sales</button>
+    	<button id="serviceChat1" class="ui chatSelection button">Service</button>
+    	<button id="partsChat1"   class="ui chatSelection button">Parts</button>
+	</div>
   </div>
-  <div class="nine wide column chatLog">
+  <div class="six wide column chatLog">
   	<!-- CENTER CHAT CONSOLE-->
 	  <div id="chatHistory" class="large text ui very padded text segment console">
 		  <div id="chatLog">
-<!-- 			    <div class="guess ui one column grid">
-			  	<div class="row guessRow">
-			  		<img src="https://lh5.googleusercontent.com/-EynEDM3K02k/AAAAAAAAAAI/AAAAAAAAAAA/T6AsZn7xWXg/s40-c-k-mo/photo.jpg" alt="" class="brand icon">
-			    	<div class="guessMsg">I am looking to purchase a car</div>
-				</div>
-			    <div class="time">tiempo</div>
-			  </div>
-			  <div class="operator ui one column grid">
-			  	<div class="row operatorRow">
-			    	<div class="operatorMsg">I would be happy to assist you with that!</div>
-				</div>
-				<div class="time">tiempo</div>
-			  </div> -->
 		  </div>
 	  </div>
 	  <div class="ui form">
   		<div class="field operatorInput raised">
 	  		<textarea id="operatorText" rows="3" placeholder="Insert your message here"></textarea>
-	  		<div id="send" class="ui bottom attached button" tabindex="0">Submit</div>
+	  		<div id="send" class="ui bottom blue attached button" tabindex="0">Submit</div>
 	  	</div>
 	  </div>
   </div>
@@ -69,9 +58,71 @@
 			   <div class="link item main">-DEALERSHIP INFORMATION-</div>
 			</div>
   </div>
-  <div class="one wide column">
-    
-  </div>
+	<div class="five wide column">
+	  	<div class="ui text segment">
+		    <form id="leadForm" class="ui form">
+		    	<h4 class="ui dividing header">Guess Information</h4>
+				<div class="field">
+				    <div class="two fields">
+				      <div class="field">
+				        <input type="text" name="guess[first-name]" placeholder="First Name" required>
+				      </div>
+				      <div class="field">
+				        <input type="text" name="guess[last-name]" placeholder="Last Name" required>
+				      </div>
+				    </div>
+				</div>
+				<div class="field">
+				        <input type="email" name="guess[email]" placeholder="E-mail" id="guessEmail" required>
+				</div>
+				<div class="field">
+				        <input type="tel" minlength="10" name="guess[phone]" placeholder="Phone" id="guessPhone"required>
+				</div>
+				<h4 class="ui dividing header">Vehicle Information</h4>
+				<div class="field">
+				        <input type="text" name="guess[vehicle-number]" placeholder="VIN or Stock#">
+				</div>
+			    <div class="two fields">
+			      <div class="field">
+			        <input type="text" name="guess[vehicle-year]" placeholder="Year">
+			      </div>
+			      <div class="field">
+			        <input type="text" name="guess[vehicle-make]" placeholder="Make">
+			      </div>
+			    </div>
+				<div class="field">
+				        <input type="text" name="guess[vehicle-model]" placeholder="Model">
+				</div>
+				<h4 class="ui dividing header">Department</h4>
+				<div class="field">
+					<select class="ui fluid search dropdown">
+						<option value="" selected disabled hidden>Select Department</option>
+						<option value="General">General</option>
+						<option value="Finance">Finance</option>
+						<option value="New Vehicle sales">New Vehicle Sales</option>
+						<option value="Used Vehicle Sales">Used Vehicle Sales</option>
+						<option value="Service">Service</option>
+						<option value="Parts">Parts</option>
+					</select>
+				</div>
+				<div class="field center aligned">
+					<div class="ui fluid buttons">
+					  <button type="button" class="ui department button">Sales</button>
+					  <button type="button" class="ui department button">Service</button>
+					  <button type="button" class="ui department button">Parts</button>
+					</div>
+				</div>
+				<div class="field">
+				  <textarea rows="3" placeholder="Notes"></textarea>
+				</div>		
+				<button class="ui blue fluid button">Send Lead</button>
+				  <div class="ui success message">
+				    <div class="header">Lead was sent</div>
+				    <p>Congratulations! You followed chat steps correctly.</p>
+				  </div>				
+		    </form>
+	  </div>
+	</div>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>

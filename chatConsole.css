@@ -20,8 +20,11 @@ html,body{
 
 .item.script,.item.main{
   min-height: 40px;
-  color: #0051e1 !important;
   font-size: 1.1em;
+}
+
+.item.script {
+    color: #0051e1 !important;
 }
 
 .window.close.outline{
@@ -35,11 +38,6 @@ html,body{
 
 .large.text{
   font-size: 1.1rem;
-}
-
-#send{
-  background-color: #4b8fff;
-  color: #f1f4f8;
 }
 
 .wide{
